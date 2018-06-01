@@ -29,7 +29,7 @@ before_script:
 script:
   - mvn clean install
   
-deploy:
+after_success:
   - docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
   - docker build -t testnewproject .
   - docker tag  testnewproject rodrik/test:testnewproject
