@@ -62,27 +62,27 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.1.1</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<dockerDirectory>${project.basedir}</dockerDirectory>
-					<imageName>hellotest/${project.artifactId}</imageName>
-					<imageName>${docker.registry}${project.artifactId}</imageName>
-					<pushImage>true</pushImage>
-					<retryPushCount>1</retryPushCount>
-					<serverId>docker-hub</serverId>
-				</configuration>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.spotify</groupId> -->
+<!-- 				<artifactId>docker-maven-plugin</artifactId> -->
+<!-- 				<version>1.1.1</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<phase>package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>build</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 				<configuration> -->
+<!-- 					<dockerDirectory>${project.basedir}</dockerDirectory> -->
+<!-- 					<imageName>hellotest/${project.artifactId}</imageName> -->
+<!-- 					<imageName>${docker.registry}${project.artifactId}</imageName> -->
+<!-- 					<pushImage>true</pushImage> -->
+<!-- 					<retryPushCount>1</retryPushCount> -->
+<!-- 					<serverId>docker-hub</serverId> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
 
