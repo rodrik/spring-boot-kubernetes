@@ -11,5 +11,5 @@ services:
   
   
 script:
-  mvn clean install
-  docker build -t rodrik/test .
+  - mvn clean install
+  - docker build -t rodrik/test .
