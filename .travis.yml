@@ -28,4 +28,13 @@ before_script:
 
 script:
   - mvn clean install
-  - docker build -t rodrik/test .
+  
+deploy:
+  - docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
+  - docker build -t testnewproject .
+  - docker tag  testnewproject rodrik/test:testnewproject
+  - docker push rodrik/test:testnewproject
+  - kubectl delete deployments testnewprojectapi || true
+  - kubectl create -f deployment.yaml --validate=false
+  - kubectl delete services testnewprojectapiservice || true
+  - kubectl create -f services.yaml --validate=false

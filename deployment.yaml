@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: testnewproject
-        image: ${docker.registry}:testnewproject
+        image: rodrik/test:testnewproject
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
